@@ -1,0 +1,163 @@
+\documentclass{beamer}
+\usepackage[latin1]{inputenc}
+\usepackage{amsfonts}					% special fonts support (math, etc)
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{pdftricks}
+\usepackage{hyperref}					% allow interal links
+\usepackage{makeidx}
+\begin{psinputs}
+  \usepackage{pstricks}
+  \usepackage{pstricks-add}
+  \usepackage{multido}
+  \usepackage{epsfig}
+  \usepackage{pst-grad} % For gradients
+  \usepackage{pst-plot} % For axes
+  \usepackage{pst-tree} % For trees
+  \usepackage{pst-3d} % For three dimensionnal graph
+\end{psinputs}
+
+
+\usetheme{Phil}
+\useinnertheme[shadow=true]{rounded}
+
+% titlepage. This configuration is used in the first frame
+\title[Linux kernel course]{SLIDES TITLE}
+\author{Philippe Thierry (philippe.thierry@reseau-libre.net)}
+\institute{École Centrale d'Électronique}
+\date{\date}
+
+% create a "frameheader" command. This command just show the ECE & Thales
+% logos on the feame
+\newcommand{\frameheader}{%
+\vspace{-7mm}%
+\begin{tabular}{p{0.5\paperwidth}p{0.5\paperwidth}}%
+\includegraphics[width=0.3\paperwidth]{img/ece_header.png} & \\%
+\end{tabular}%
+}
+
+% New frame title command. The title is pushed on the right and made
+% italic. the double ~~ avoid the title to touch the right border of the frame
+\newcommand{\ftitle}[1]{
+\vspace{-7mm}
+\begin{flushright}{\it #1~~}\end{flushright}
+}
+
+%% Configure lstlisting colors for C code
+\definecolor{Gray}{rgb}{0.95,0.95,0.95}
+\definecolor{purple}{rgb}{0.8,0,0.8}
+
+% Configuration of the lstlisting system.
+% Add some kernel specific keywords to the C language highlighting
+\lstset{
+% language
+language=C,
+classoffset=0,
+morekeywords={int,void,long,char,struct,union,enum,unsigned},
+keywordstyle={\color{blue}},
+classoffset=1,
+morekeywords={\_\_user,\_\_init},
+keywordstyle={\color{red}},
+classoffset=2,
+morekeywords={\#define,\#endif,\#if,\#else,\#ifndef},
+keywordstyle={\color{purple}},
+classoffset=3,
+morekeywords={\verb+@+param,\verb+@+return,brief,arg},
+keywordstyle={\color{green}},
+classoffset=0
+%morecomment=*[n][\itshape]{/*}{*/},
+% generals
+basicstyle=\tiny,
+numbers=left,
+numberstyle=\tiny,
+stepnumber=1,
+numbersep=5pt,
+backgroundcolor=\color{Gray},
+showtabs=false,
+frame=single,
+breaklines=true,
+captionpos=b
+}
+
+% encapsulating alt command in order to avoid to write to times the text.
+% first arg is the slide on which the red color is used, the second arg is
+% the text to manage
+\newcommand{\myalt}[2]{\alt<#1>{\color{red} #2}{\color{gray} #2}}
+
+% support for index
+\makeindex
+\newenvironment{theindex}
+ {\let\item\par
+  %definitions for subitem etc
+  }{}
+\newcommand\indexspace{}
+% let's start...
+\begin{document}
+
+% first add frames background, using the ECE standard canvas
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{img/ece.png}}
+
+% some colors
+%\definecolor{preproc}{rgb}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frameheader
+\titlepage
+\end{frame}
+
+% disactive title color. Frame titles will have no bg color
+\setbeamercolor{titlelike}{fg=titleTextColor,bg=white}
+
+%\setbeamertemplate{background canvas}[vertical shading][top=blue!80,midpoint=0.8,bottom=white]
+\section{Introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Summary}
+\frame[shrink]{
+\tableofcontents
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Aim of this document}
+\begin{frame}
+\begin{itemize}
+\item \FIXME{first aim}
+\end{itemize}
+
+\end{frame}
+
+\section{First section}
+\subsection{First subsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\end{frame}
+
+\subsection{Second subsection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\frametitle{\ftitle{frame title}}
+\end{frame}
+
+
+\subsection{Questions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\vspace{5mm}
+\begin{center}
+\includegraphics[width=5cm]{img/linux_qestion}
+\end{center}
+\end{frame}
+
+\subsection{Index}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame[allowframebreaks]{
+\frametitle{\ftitle{Index}}
+\printindex
+}
+
+
+\end{document}
