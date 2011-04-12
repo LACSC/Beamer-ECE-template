@@ -26,7 +26,7 @@
 \title[Linux kernel course]{SLIDES TITLE}
 \author{Philippe Thierry (philippe.thierry@reseau-libre.net)}
 \institute{École Centrale d'Électronique}
-\date{\date}
+\date{the date}
 
 % create a "frameheader" command. This command just show the ECE & Thales
 % logos on the feame
@@ -88,11 +88,11 @@ captionpos=b
 % support for index
 \makeindex
 \newenvironment{theindex}
- {\let\item\par
-  %definitions for subitem etc
+ {\let\item\par % definitions for subitem etc
   }{}
-\newcommand\indexspace{}
+\newcommand{\indexspace}{}
 % let's start...
+
 \begin{document}
 
 % first add frames background, using the ECE standard canvas
@@ -124,9 +124,8 @@ captionpos=b
 \subsection{Aim of this document}
 \begin{frame}
 \begin{itemize}
-\item \FIXME{first aim}
+\item first aim
 \end{itemize}
-
 \end{frame}
 
 \section{First section}
@@ -134,6 +133,7 @@ captionpos=b
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+\frametitle{\ftitle{frame title}}
 \end{frame}
 
 \subsection{Second subsection}
@@ -143,6 +143,10 @@ captionpos=b
 \end{frame}
 
 
+\section{Conclusion}
+
+\subsection{What has been explained in this document}
+
 \subsection{Questions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
@@ -150,6 +154,11 @@ captionpos=b
 \begin{center}
 \includegraphics[width=5cm]{img/linux_qestion}
 \end{center}
+\end{frame}
+
+\subsection{Bibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
 \end{frame}
 
 \subsection{Index}
