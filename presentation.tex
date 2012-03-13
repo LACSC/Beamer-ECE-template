@@ -26,7 +26,7 @@
 \title[Linux kernel course]{SLIDES TITLE}
 \author{Philippe Thierry (philippe.thierry@reseau-libre.net)}
 \institute{École Centrale d'Électronique}
-\date{the date}
+\date{presentation date}
 
 % create a "frameheader" command. This command just show the ECE & Thales
 % logos on the feame
@@ -115,7 +115,7 @@ captionpos=b
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Summary}
-\frame[shrink]{
+\frame[shrink]{% reduce wathever is in this slide to frame size. Purge if the summary is small
 \tableofcontents
 }
 
@@ -133,6 +133,7 @@ captionpos=b
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
+% depending on your needs. This add a title on the top right of the slide
 \frametitle{\ftitle{Components architecture}}
 \end{frame}
 
@@ -194,7 +195,7 @@ captionpos=b
 
 \subsection{Index}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Frame %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\frame[allowframebreaks]{
+\frame[allowframebreaks]{% allow multi-frames for the content. Can be used for summary also
 \frametitle{\ftitle{Index}}
 \printindex
 }
